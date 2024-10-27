@@ -37,12 +37,13 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(AdminAuth::class)->group(function(){
 
+
     Route::get('list-register', [RegisterListController::class, 'index'])->name('admin.list-register');
     Route::get('edit-register/{id}', [RegisterListController::class, 'edit'])->name('admin.edit-register');
     Route::patch('edit-register/{id}', [RegisterListController::class, 'update'])->name('admin.update-register');
     Route::get('delete-register/{id}', [RegisterListController::class, 'delete'])->name('admin.delete-register');
 
-
+    
     Route::get('add-user', [UserListController::class, 'create'])->name('admin.add-user');
     Route::post("add-user", [UserListController::class, 'store'])->name('admin.add-user');
     Route::get('list-user', [UserListController::class, 'index'])->name('admin.list-user');

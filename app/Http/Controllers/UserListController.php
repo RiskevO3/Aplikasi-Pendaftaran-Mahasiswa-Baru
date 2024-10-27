@@ -80,4 +80,5 @@ class UserListController extends Controller
         session()->flash('success', 'Data berhasil diubah');
         return redirect()->route('admin.list-user');
     }
+
 }
