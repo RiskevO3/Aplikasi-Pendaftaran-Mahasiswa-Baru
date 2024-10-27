@@ -46,4 +46,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function registerForms()
+    {
+        return $this->hasMany(RegisterForm::class, 'user_id');
+    }
 }

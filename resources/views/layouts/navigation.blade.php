@@ -16,6 +16,21 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+
+                @if(Auth::user()->role == 'admin')
+                    <!-- Navigation Links -->
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('admin.list-user')" :active="request()->routeIs('admin.list-user')">
+                            {{ __('User Data') }}
+                        </x-nav-link>
+                    </div>
+                    <!-- Navigation Links -->
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('admin.list-register')" :active="request()->routeIs('admin.list-register')">
+                            {{ __('Register Form Data') }}
+                        </x-nav-link>
+                    </div>
+                @endif
             </div>
 
             <!-- Settings Dropdown -->
